@@ -1,7 +1,8 @@
+'use strict';
 const Controller = require('egg').Controller;
 class PostController extends Controller {
   async create() {
-    console.log('111')
+    console.log('111');
     const { ctx, service } = this;
     const createRule = {
       title: { type: 'string' },
