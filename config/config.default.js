@@ -16,7 +16,13 @@ module.exports = appInfo => {
   config.keys = appInfo.name + '_1559530964852_8285';
 
   // add your middleware config here
-  config.middleware = [];
+  config.middleware = ['gzip'];
+
+  config.security = {
+    csrf: {
+      enable: false, // 通过 body 传递 CSRF token 的默认字段为 _csrf
+    },
+  },
 
   config.jsonp = {
     callback: 'callback', // 识别 query 中的 `callback` 参数
