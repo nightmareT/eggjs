@@ -49,7 +49,7 @@
         "name": "Egg Attach to remote",
         "localRoot": "${workspaceRoot}",
         "remoteRoot": "/usr/src/app",
-        "address": "localhost",
+        "address": "127.0.0.1",
         "protocol": "auto",
         "port": 9999
       }

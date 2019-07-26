@@ -19,10 +19,15 @@ module.exports = appInfo => {
   config.middleware = ['gzip'];
 
   config.security = {
-    csrf: {
-      enable: false, // 通过 body 传递 CSRF token 的默认字段为 _csrf
-    },
-  },
+    csrf: false,
+    domainWhiteList:['http://127.0.0.1:8080']
+  };
+
+  config.cors = {
+    credentials: true,
+    origin: 'http://127.0.0.1:8080',
+    allowMethods: 'GET,PUT,POST,DELETE',
+  }
 
   config.jsonp = {
     callback: 'callback', // 识别 query 中的 `callback` 参数

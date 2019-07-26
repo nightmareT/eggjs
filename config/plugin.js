@@ -8,5 +8,9 @@ module.exports = {
   jsonp: {
     enable: true,
     package: 'egg-jsonp',
+  },
+  cors: {
+    enable: true,
+    package: 'egg-cors'
   }
 };

@@ -7,7 +7,12 @@ class HomeController extends Controller {
     const { ctx } = this;
     // ctx.set('Access-Control-Allow-Origin', '*')
     ctx.logger.info('some request data: %j', ctx.request.body);
-    ctx.body = 'hi, JiuJiu';
+    const userName = ctx.cookies.get('userName')
+    if (userName && userName ==='jiujiu') {
+      ctx.body = 'hi, JiuJiu';
+    } else {
+      ctx.body = 'please, login'
+    }
   }
 }
 
