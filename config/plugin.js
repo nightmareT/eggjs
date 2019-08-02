@@ -9,6 +9,10 @@ module.exports = {
     enable: true,
     package: 'egg-jsonp',
   },
+  mysql: {
+    enable: true,
+    package: 'egg-mysql',
+  },
   cors: {
     enable: true,
     package: 'egg-cors'

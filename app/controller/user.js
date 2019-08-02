@@ -9,10 +9,13 @@ class HomeController extends Controller {
     const { ctx } = this;
     // ctx.set('Access-Control-Allow-Origin', '*')
     ctx.logger.info('some request data: %j', ctx.request.body);
+    const userName = ctx.cookies.get('userName')
     if (ctx.request.body.userName === 'jiujiu') {
       ctx.body = 'check success';
+      ctx.logger.info('some request data: %j', 'jiujiu');
       this.ctx.cookies.set('userName', 'jiujiu')
-      debugger
+      // 执行service中的数据库操作
+      await this.service.user.dataBase()
     } else {
       ctx.body = 'check fail';
     }
